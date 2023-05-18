@@ -3,7 +3,10 @@ import SearchField from "./components/SearchField";
 import Images from "./components/Images";
 import useAxios from "./hooks/useAxios";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
+import {createContext} from "react";
 
+// Create Context
+export const ImageContext = createContext();
 
 function App() {
 
@@ -12,16 +15,22 @@ function App() {
         isLoading,
         error,
         fetchData
-    } = useAxios(`search/photos?page=1&query=office&client_id=${UNSPLASH_ACCESS_KEY}`);
-    console.log(response);
+    } = useAxios(`search/photos?page=1&query=cats&client_id=${UNSPLASH_ACCESS_KEY}`);
+
+    const value = {
+        response,
+        isLoading,
+        error,
+        fetchData
+    }
 
     return (
-        <>
+        <ImageContext.Provider value={value}>
             <Jumbutron>
                 <SearchField/>
             </Jumbutron>
             <Images/>
-        </>
+        </ImageContext.Provider>
     );
 }
 
