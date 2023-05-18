@@ -1,10 +1,8 @@
-## Photo Finder App
+# Photo Finder
 
-React JS app for fetching photos from Unsplash API.
-I am making it with the help of [this tutorial](https://youtu.be/yUau8xImmK0)(20:17).
+<b>Photo Finder</b> is a JS app written in React for creating a multiplatform tool for saerching your favorite photos.
+It currently only supports [Unsplash]() API; but I'm going to add other API services to it in future as well.
 
-#### Available Scripts
+### Credits:
 
-##### `npm start`
-
-
+initial app was created with the help of [this tutorial](https://youtu.be/yUau8xImmK0).
