@@ -1,13 +1,9 @@
 import React from 'react'
 
 /**
- * While pictures are being loaded from server, this place-holder will be shown for each picture
- *
- * @param item
- * @returns {unknown[]}
- * @constructor
+ * While pictures are being loaded from server, this place-holder will be shown for the provided number of pictures.
  */
-const Skeleton = ({item}) => {
+const ImagesPlaceHolder = ({item}) => {
     return [...Array(item).keys()].map(() => (
         <div className="animate-pulse">
             <div className="bg-gray-300 rounded-lg h-72">
@@ -16,4 +12,4 @@ const Skeleton = ({item}) => {
         </div>
     ))
 }
-export default Skeleton
+export default ImagesPlaceHolder

@@ -1,7 +1,7 @@
-import Jumbutron from "./components/Jumbutron";
-import SearchField from "./components/SearchField";
-import Images from "./components/Images";
-import useAxios from "./hooks/useAxios";
+import ScreenHeader from "./search/ScreenHeader";
+import SearchBar from "./search/SearchBar";
+import ImageScreen from "./images/ImageScreen";
+import UnsplashService from "./data/UnsplashService";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {createContext, useState} from "react";
 
@@ -15,7 +15,7 @@ function App() {
         isLoading,
         error,
         fetchData
-    } = useAxios(`search/photos?page=1&query=cats&client_id=${UNSPLASH_ACCESS_KEY}`);
+    } = UnsplashService(`search/photos?page=1&query=cats&client_id=${UNSPLASH_ACCESS_KEY}`);
 
     const value = {
         response,
@@ -28,10 +28,10 @@ function App() {
 
     return (
         <ImageContext.Provider value={value}>
-            <Jumbutron>
-                <SearchField/>
-            </Jumbutron>
-            <Images/>
+            <ScreenHeader>
+                <SearchBar/>
+            </ScreenHeader>
+            <ImageScreen/>
         </ImageContext.Provider>
     );
 }

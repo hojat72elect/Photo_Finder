@@ -6,10 +6,8 @@ import {UNSPLASH_ACCESS_KEY} from "../.secrets/Keys";
 /**
  * Search bar and the button beside it.
  *
- *  @returns {JSX.Element}
- * @constructor
  */
-const SearchField = () => {
+const SearchBar = () => {
 
     const [searchValue, setSearchValue] = useState("");
     const {fetchData, setSearchImage} = useContext(ImageContext);
@@ -26,7 +24,7 @@ const SearchField = () => {
 
 
     const handleEnterSearch = (e) => {
-        if (e.key ==='Enter'){
+        if (e.key === 'Enter') {
             handleButtonSearch();
         }
     };
@@ -50,4 +48,4 @@ const SearchField = () => {
         </div>
     )
 }
-export default SearchField
+export default SearchBar

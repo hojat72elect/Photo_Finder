@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Image = ({data}) => {
+/**
+ * A normal Image viewer which is clickable.
+ */
+const ImageButton = ({data}) => {
     return (
         <a href={data.urls.regular} target="_blank" rel="noreferrer">
             <img className="h-72 w-full object-cover rounded-lg shadow-lg"
@@ -8,4 +11,4 @@ const Image = ({data}) => {
         </a>
     )
 }
-export default Image
+export default ImageButton

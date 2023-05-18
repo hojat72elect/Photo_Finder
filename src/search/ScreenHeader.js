@@ -1,12 +1,11 @@
 import React from 'react'
 
 /**
- * The header part.
+ * The header part of the screen (contains the [SearchField]).
+ * It depicts a header title and also shows the [children] below that title.
  *
- * @returns {JSX.Element}
- * @constructor
  */
-const Jumbutron = ({children}) => {
+const ScreenHeader = ({children}) => {
     return (
         <div className="bg-gray-900 flex items-center py-10">
             <div className="max-w-md mx-auto w-full">
@@ -16,4 +15,4 @@ const Jumbutron = ({children}) => {
         </div>
     )
 }
-export default Jumbutron
+export default ScreenHeader
