@@ -3,13 +3,13 @@ import SearchField from "./components/SearchField";
 import Images from "./components/Images";
 import useAxios from "./hooks/useAxios";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
-import {createContext} from "react";
+import {createContext, useState} from "react";
 
 // Create Context
 export const ImageContext = createContext();
 
 function App() {
-
+    const [searchImage, setSearchImage] = useState('');
     const {
         response,
         isLoading,
@@ -21,7 +21,9 @@ function App() {
         response,
         isLoading,
         error,
-        fetchData
+        fetchData,
+        searchImage,
+        setSearchImage
     }
 
     return (
