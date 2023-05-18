@@ -6,3 +6,9 @@ It currently only supports [Unsplash]() API; but I'm going to add other API serv
 ### Credits:
 
 initial app was created with the help of [this tutorial](https://youtu.be/yUau8xImmK0).
+
+Current technologies used in this project are as follows:
+<ul>
+<li>React JS</li>
+<li>Tailwind CSS</li>
+</ul>
