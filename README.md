@@ -1,14 +1,21 @@
 # Photo Finder
 
-<b>Photo Finder</b> is a JS app written in React for creating a multiplatform tool for saerching your favorite photos.
-It currently only supports [Unsplash]() API; but I'm going to add other API services to it in future as well.
+<b>Photo Finder</b> is a React JS app I wrote in order to try my hand at various React technologies. The resulting app
+connects to [Unsplash](https://unsplash.com/developers) API; but I'm going to add other API services to it in future as
+well.
 
-### Credits:
+### Screenshot:
 
-initial app was created with the help of [this tutorial](https://youtu.be/yUau8xImmK0).
+<img src="./docs/screenshot1.png" width="1383" alt="The screen shot of the main page of the app."/>
+
+### Technologies used:
 
 Current technologies used in this project are as follows:
 <ul>
-<li>React JS</li>
-<li>Tailwind CSS</li>
+<li><a href="https://react.dev/">React JS</a></li>
+<li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
 </ul>
+
+### Credits:
+
+Initial app was created with the help of [this tutorial](https://youtu.be/yUau8xImmK0).
