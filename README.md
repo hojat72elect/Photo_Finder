@@ -14,6 +14,10 @@ Current technologies used in this project are as follows:
 <ul>
 <li><a href="https://react.dev/">React JS</a></li>
 <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+<li>JavaScript</li>
+<li>HTML 5</li>
+<li>CSS</li>
+<li>Git</li>
 </ul>
 
 ### Credits:
