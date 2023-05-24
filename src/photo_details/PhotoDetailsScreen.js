@@ -6,7 +6,8 @@ function PhotoDetailsScreen(props) {
 
     return (
         <div className="items-center">
-            <img className="max-w-md mx-auto my-10  rounded-lg shadow-lg" src={imageUrl} alt="the artwork you clicked on."/>
+            <img className="w-auto h-96 mx-auto my-10 rounded-lg shadow-lg" src={imageUrl}
+                 alt="the artwork you clicked on."/>
         </div>
     )
 
