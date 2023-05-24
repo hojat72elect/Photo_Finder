@@ -5,6 +5,7 @@ import UnsplashService from "./data/UnsplashService";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {createContext, useState} from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
 
 // Create Context
 export const ImageContext = createContext();
@@ -38,12 +39,9 @@ function App() {
                             </ScreenHeader>
                             <ImageScreen/>
                         </Route>
-                        <Route path="/photo_details">
-                            <h1>This page is going to show a specific picture.</h1>
-                        </Route>
+                        <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
                     </Switch>
                 </div>
-
             </ImageContext.Provider>
         </BrowserRouter>
     );
