@@ -6,7 +6,10 @@ import {Link} from "react-router-dom";
  */
 const ImageButton = ({data}) => {
     return (
-        <Link to="/photo_details">
+        <Link to={{
+            pathname: "/photo_details",
+            state: data
+        }}>
             <img className="h-72 w-full object-cover rounded-lg shadow-lg"
                  src={data.urls.small} alt={data.alt_description}/>
         </Link>
