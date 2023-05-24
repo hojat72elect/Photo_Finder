@@ -5,8 +5,12 @@ function PhotoDetailsScreen(props) {
     const imageUrl = props.location.state.urls.regular;
 
     return (
-        <h1>{imageUrl}</h1>
+        <div className="items-center">
+            <img className="max-w-md mx-auto my-10  rounded-lg shadow-lg" src={imageUrl} alt="the artwork you clicked on."/>
+        </div>
     )
+
+
 }
 
 export default PhotoDetailsScreen
