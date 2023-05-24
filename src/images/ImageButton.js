@@ -1,14 +1,15 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 /**
  * A normal Image viewer which is clickable.
  */
 const ImageButton = ({data}) => {
     return (
-        <a href={data.urls.regular} target="_blank" rel="noreferrer">
+        <Link to="/photo_details">
             <img className="h-72 w-full object-cover rounded-lg shadow-lg"
                  src={data.urls.small} alt={data.alt_description}/>
-        </a>
+        </Link>
     )
 }
 export default ImageButton
