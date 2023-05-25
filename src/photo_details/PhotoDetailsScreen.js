@@ -21,6 +21,8 @@ const firestore = firebase.firestore();
 function PhotoDetailsScreen(props) {
 
     const imageUrl = props.location.state.urls.regular;
+    const imageId = props.location.state.id;
+
     const [user] = useAuthState(auth);
 
     return (
@@ -34,61 +36,61 @@ function PhotoDetailsScreen(props) {
         </div>
     )
 
+    function MessagesScreen() {
 
-}
-
-function MessagesScreen() {
-    const dummy = useRef();
-    const messagesRef = firestore.collection('messages');
-    const query = messagesRef.orderBy('createdAt').limit(25);
-
-    const [messages] = useCollectionData(query, {idField: 'id'});
-
-    const [formValue, setFormValue] = useState('');
+        const dummy = useRef();
+        const commentsRef = firestore.collection(imageId);
+        const query = commentsRef.orderBy('createdAt').limit(25);
+        const [comments] = useCollectionData(query, {idField: 'id'});
+        const [formValue, setFormValue] = useState('');
 
 
-    const sendMessage = async (e) => {
-        e.preventDefault();
+        const sendComment = async (e) => {
+            e.preventDefault();
 
-        const {uid, photoURL} = auth.currentUser;
+            const {uid, photoURL} = auth.currentUser;
 
-        await messagesRef.add({
-            text: formValue,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            uid,
-            photoURL
-        })
+            await commentsRef.add({
+                text: formValue,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                uid,
+                photoURL
+            })
 
-        setFormValue('');
-        dummy.current.scrollIntoView({behavior: 'smooth'});
+            setFormValue('');
+            dummy.current.scrollIntoView({behavior: 'smooth'});
+        }
+
+        return (<div className="w-96 mx-auto">
+            <h2>Comments</h2>
+            <main>
+                {comments && comments.map(msg => <CommentMessage key={msg.id} message={msg}/>)}
+                <span ref={dummy}></span>
+            </main>
+
+            <form onSubmit={sendComment}>
+
+                <input value={formValue} onChange={(e) => setFormValue(e.target.value)}
+                       placeholder="say something nice"/>
+
+                <button type="submit" disabled={!formValue}>🕊️</button>
+
+            </form>
+        </div>)
     }
 
-    return (<div className="w-96 mx-auto">
-        <h2>Comments</h2>
-        <main>
-            {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
-            <span ref={dummy}></span>
-        </main>
 
-        <form onSubmit={sendMessage}>
-
-            <input value={formValue} onChange={(e) => setFormValue(e.target.value)}
-                   placeholder="say something nice"/>
-
-            <button type="submit" disabled={!formValue}>🕊️</button>
-
-        </form>
-    </div>)
 }
 
-function ChatMessage(props) {
+function CommentMessage(props) {
     const {text, uid, photoURL} = props.message;
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
     return (<>
         <div className={`message ${messageClass} grid grid-rows-1 grid-cols-2 my-7`}>
-            <img className="w-16 rounded-lg " src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="user's avatar"/>
+            <img className="w-16 rounded-lg " src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'}
+                 alt="user's avatar"/>
             <p>{text}</p>
         </div>
     </>)
