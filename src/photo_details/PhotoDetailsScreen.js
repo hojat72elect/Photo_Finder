@@ -104,10 +104,14 @@ function SignInScreen() {
     }
 
     return (
-        <>
-            <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-            <p>Do not violate the community guidelines or you will be banned for life!</p>
-        </>
+        <div className="w-96 mx-auto">
+            <button
+                className="sign-in text-purple-800 hover:bg-slate-50"
+                onClick={signInWithGoogle}>
+                Sign in with Google
+            </button>
+            <p className="font-medium text-sm">Please make sure you're following community guidelines.</p>
+        </div>
     )
 
 }
