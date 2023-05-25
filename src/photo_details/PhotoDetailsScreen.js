@@ -25,15 +25,14 @@ function PhotoDetailsScreen(props) {
 
     return (
         <div className="items-center">
+
             <img className="w-auto h-96 mx-auto my-10 rounded-lg shadow-lg" src={imageUrl}
                  alt="the artwork you clicked on."/>
-            <h2>Comments</h2>
             <section>
                 {user ? <MessagesScreen/> : <SignInScreen/>}
             </section>
         </div>
     )
-
 
 
 }
@@ -64,13 +63,11 @@ function MessagesScreen() {
         dummy.current.scrollIntoView({behavior: 'smooth'});
     }
 
-    return (<>
+    return (<div className="w-96 mx-auto">
+        <h2>Comments</h2>
         <main>
-
             {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
-
             <span ref={dummy}></span>
-
         </main>
 
         <form onSubmit={sendMessage}>
@@ -81,7 +78,7 @@ function MessagesScreen() {
             <button type="submit" disabled={!formValue}>🕊️</button>
 
         </form>
-    </>)
+    </div>)
 }
 
 function ChatMessage(props) {
@@ -90,8 +87,8 @@ function ChatMessage(props) {
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
     return (<>
-        <div className={`message ${messageClass}`}>
-            <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="user's avatar"/>
+        <div className={`message ${messageClass} grid grid-rows-1 grid-cols-2 my-7`}>
+            <img className="w-16 rounded-lg " src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="user's avatar"/>
             <p>{text}</p>
         </div>
     </>)
