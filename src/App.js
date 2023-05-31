@@ -17,7 +17,7 @@ function App() {
         isLoading,
         error,
         fetchData
-    } = UnsplashService(`search/photos?page=1&query=cats&client_id=${UNSPLASH_ACCESS_KEY}`);
+    } = UnsplashService(`search/photos?page=10&query=montreal&client_id=${UNSPLASH_ACCESS_KEY}`);
 
     const value = {
         response,
