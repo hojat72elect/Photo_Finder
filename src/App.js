@@ -6,6 +6,7 @@ import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {createContext, useState} from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
+import ReactPaginate from "react-paginate";
 
 // Create Context
 export const ImageContext = createContext();
@@ -13,11 +14,12 @@ export const ImageContext = createContext();
 function App() {
     const [searchImage, setSearchImage] = useState('');
     const {
+        pageCount,
         response,
         isLoading,
         error,
         fetchData
-    } = UnsplashService(`search/photos?page=10&query=montreal&client_id=${UNSPLASH_ACCESS_KEY}`);
+    } = UnsplashService(`search/photos?page=1&query=montreal&client_id=${UNSPLASH_ACCESS_KEY}`);
 
     const value = {
         response,
@@ -38,6 +40,9 @@ function App() {
                                 <SearchBar/>
                             </ScreenHeader>
                             <ImageScreen/>
+                            <ReactPaginate
+                                pageCount={pageCount}
+                            />
                         </Route>
                         <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
                     </Switch>

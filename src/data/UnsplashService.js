@@ -9,6 +9,7 @@ import axios from "axios";
 const UnsplashService = (param) => {
     const [response, setResponse] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [pageCount, setPageCount] = useState(0);
     const [error, setError] = useState();
 
     axios.defaults.baseURL = 'https://api.unsplash.com'
@@ -17,6 +18,7 @@ const UnsplashService = (param) => {
         try {
             setIsLoading(true);
             const res = await axios(url);
+            setPageCount(res.data.total_pages);
             setResponse(res.data.results);
         } catch (err) {
             setError(err)
@@ -31,6 +33,7 @@ const UnsplashService = (param) => {
     }, [param])
 
     return {
+        pageCount,
         response,
         isLoading,
         error,
