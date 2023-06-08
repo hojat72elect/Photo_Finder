@@ -1,7 +1,8 @@
 # Photo Finder
 
 <b>Photo Finder</b> is a React JS app I wrote in order to try my hand at various React technologies. The resulting app
-connects to [Unsplash](https://unsplash.com/developers) API for fetching photos; and also uses [Cloud firestore](https://firebase.google.com/docs/firestore) for
+connects to [Unsplash](https://unsplash.com/developers) API for fetching photos; and also
+uses [Cloud firestore](https://firebase.google.com/docs/firestore) for
 sign-in and commenting on the pictures.
 
 ### Screenshot:
@@ -27,6 +28,6 @@ Current technologies used in this project are as follows:
 <li>Git</li>
 </ul>
 
-### Credits:
+### Development management:
 
-Initial app was created with the help of [this](https://youtu.be/yUau8xImmK0) and [this](https://www.youtube.com/watch?v=zQyrwxMPm88) tutorials.
+Development board of the app is a trello board shared [here](https://trello.com/b/iD1sUwjN/photo-finder).
