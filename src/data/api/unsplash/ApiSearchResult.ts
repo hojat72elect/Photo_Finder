@@ -23,62 +23,11 @@ export type ApiPhotoLinks = {
     download_location: string;
 }
 
-/**
- * Links about sponsors of a photographer/user.
- */
-export type ApiSponsorLinks = {
-    self: string;
-    html: string;
-    photos: string;
-    likes: string;
-    portfolio: string;
-    following: string;
-    followers: string;
-}
-
-export type ApiSponsorProfileImage = {
-    small: string;
-    medium: string;
-    large: string;
-}
-
-export type ApiSponsorSocials = {
-    instagram_username: string;
-    portfolio_url: string;
-    twitter_username: string;
-    paypal_email?: any;
-}
-
-/**
- * the sponsors of a user.
- */
-export type ApiSponsor = {
-    id: string;
-    updated_at: string;
-    username: string;
-    name: string;
-    first_name: string;
-    last_name?: any;
-    twitter_username: string;
-    portfolio_url: string;
-    bio: string;
-    location: string;
-    links: ApiSponsorLinks;
-    profile_image: ApiSponsorProfileImage;
-    instagram_username: string;
-    total_collections: number;
-    total_likes: number;
-    total_photos: number;
-    accepted_tos: boolean;
-    for_hire: boolean;
-    social: ApiSponsorSocials;
-}
-
 export type ApiUserSponsorship = {
     impression_urls: any[];
     tagline: string;
     tagline_url: string;
-    sponsor: ApiSponsor;
+    sponsor: ApiUser;
 }
 
 export type ApiTopicSubmission = {}
@@ -99,7 +48,7 @@ export type ApiUserProfileImage = {
     large: string;
 }
 
-export type ApiUserSocial = {
+export type ApiUserSocials = {
     instagram_username: string;
     portfolio_url: string;
     twitter_username: string;
@@ -125,28 +74,18 @@ export type ApiUser = {
     total_photos: number;
     accepted_tos: boolean;
     for_hire: boolean;
-    social: ApiUserSocial;
+    social: ApiUserSocials;
 }
 
-export type ApiPhotoTagsType = {
-    slug: string;
-    pretty_slug: string;
-}
-
-export type ApiPhotoTagsCategory = {
-    slug: string;
-    pretty_slug: string;
-}
-
-export type ApiPhotoTagsSubCategory = {
+export type ApiSlug = {
     slug: string;
     pretty_slug: string;
 }
 
 export type ApiPhotoTagsAncestry = {
-    type: ApiPhotoTagsType;
-    category: ApiPhotoTagsCategory;
-    subcategory: ApiPhotoTagsSubCategory;
+    type: ApiSlug;
+    category: ApiSlug;
+    subcategory: ApiSlug;
 }
 
 export type ApiCoverPhotoUrls = {
