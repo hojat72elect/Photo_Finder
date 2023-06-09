@@ -128,28 +128,28 @@ export type ApiUser = {
     social: ApiUserSocial;
 }
 
-export type RootObjectResultsTagsSourceAncestryType = {
+export type ApiPhotoTagsType = {
     slug: string;
     pretty_slug: string;
 }
 
-export type RootObjectResultsTagsSourceAncestryCategory = {
+export type ApiPhotoTagsCategory = {
     slug: string;
     pretty_slug: string;
 }
 
-export type RootObjectResultsTagsSourceAncestrySubcategory = {
+export type ApiPhotoTagsSubCategory = {
     slug: string;
     pretty_slug: string;
 }
 
 export type ApiPhotoTagsAncestry = {
-    type: RootObjectResultsTagsSourceAncestryType;
-    category: RootObjectResultsTagsSourceAncestryCategory;
-    subcategory: RootObjectResultsTagsSourceAncestrySubcategory;
+    type: ApiPhotoTagsType;
+    category: ApiPhotoTagsCategory;
+    subcategory: ApiPhotoTagsSubCategory;
 }
 
-export type RootObjectResultsTagsSourceCover_photoUrls = {
+export type ApiCoverPhotoUrls = {
     raw: string;
     full: string;
     regular: string;
@@ -158,16 +158,16 @@ export type RootObjectResultsTagsSourceCover_photoUrls = {
     small_s3: string;
 }
 
-export type RootObjectResultsTagsSourceCover_photoLinks = {
+export type ApiCoverPhotoLinks = {
     self: string;
     html: string;
     download: string;
     download_location: string;
 }
 
-export type RootObjectResultsTagsSourceCover_photoTopic_submissions = {}
+export type ApiCoverPhotoTopicSubmissions = {}
 
-export type RootObjectResultsTagsSourceCover_photoUserLinks = {
+export type ApiCoverPhotoUserLinks = {
     self: string;
     html: string;
     photos: string;
@@ -177,20 +177,20 @@ export type RootObjectResultsTagsSourceCover_photoUserLinks = {
     followers: string;
 }
 
-export type RootObjectResultsTagsSourceCover_photoUserProfile_image = {
+export type ApiCoverPhotoUserProfileImage = {
     small: string;
     medium: string;
     large: string;
 }
 
-export type RootObjectResultsTagsSourceCover_photoUserSocial = {
+export type ApiCoverPhotoUserSocial = {
     instagram_username: string;
     portfolio_url: string;
     twitter_username: string;
     paypal_email?: any;
 }
 
-export type RootObjectResultsTagsSourceCover_photoUser = {
+export type ApiCoverPhotoUser = {
     id: string;
     updated_at: string;
     username: string;
@@ -201,18 +201,18 @@ export type RootObjectResultsTagsSourceCover_photoUser = {
     portfolio_url: string;
     bio: string;
     location: string;
-    links: RootObjectResultsTagsSourceCover_photoUserLinks;
-    profile_image: RootObjectResultsTagsSourceCover_photoUserProfile_image;
+    links: ApiCoverPhotoUserLinks;
+    profile_image: ApiCoverPhotoUserProfileImage;
     instagram_username: string;
     total_collections: number;
     total_likes: number;
     total_photos: number;
     accepted_tos: boolean;
     for_hire: boolean;
-    social: RootObjectResultsTagsSourceCover_photoUserSocial;
+    social: ApiCoverPhotoUserSocial;
 }
 
-export type ApiPhotoTagsCover = {
+export type ApiCoverPhoto = {
     id: string;
     slug: string;
     created_at: string;
@@ -224,16 +224,16 @@ export type ApiPhotoTagsCover = {
     blur_hash: string;
     description?: any;
     alt_description: string;
-    urls: RootObjectResultsTagsSourceCover_photoUrls;
-    links: RootObjectResultsTagsSourceCover_photoLinks;
+    urls: ApiCoverPhotoUrls;
+    links: ApiCoverPhotoLinks;
     likes: number;
     liked_by_user: boolean;
     current_user_collections: any[];
     sponsorship?: any;
-    topic_submissions: RootObjectResultsTagsSourceCover_photoTopic_submissions;
+    topic_submissions: ApiCoverPhotoTopicSubmissions;
     premium: boolean;
     plus: boolean;
-    user: RootObjectResultsTagsSourceCover_photoUser;
+    user: ApiCoverPhotoUser;
 }
 
 export type ApiPhotoTagsSource = {
@@ -243,7 +243,7 @@ export type ApiPhotoTagsSource = {
     description: string;
     meta_title: string;
     meta_description: string;
-    cover_photo: ApiPhotoTagsCover;
+    cover_photo: ApiCoverPhoto;
 }
 
 export type ApiPhotoTags = {
