@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {createContext, useState} from 'react';
 import UnsplashService from "./data/UnsplashService";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
