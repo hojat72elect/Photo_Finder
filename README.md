@@ -26,6 +26,7 @@ Current technologies used in this project are as follows:
 <li><a href="https://webpack.js.org/">Webpack</a> bundler</li>
 <li>HTML 5</li>
 <li>CSS</li>
+<li>Bootstrap</li>
 <li>Git</li>
 </ul>
 
