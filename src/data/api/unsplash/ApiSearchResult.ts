@@ -88,32 +88,7 @@ export type ApiPhotoTagsAncestry = {
     subcategory: ApiSlug;
 }
 
-export type ApiCoverPhotoUrls = {
-    raw: string;
-    full: string;
-    regular: string;
-    small: string;
-    thumb: string;
-    small_s3: string;
-}
-
 export type ApiCoverPhotoTopicSubmissions = {}
-
-export type ApiCoverPhotoUserLinks = {
-    self: string;
-    html: string;
-    photos: string;
-    likes: string;
-    portfolio: string;
-    following: string;
-    followers: string;
-}
-
-export type ApiCoverPhotoUserProfileImage = {
-    small: string;
-    medium: string;
-    large: string;
-}
 
 export type ApiCoverPhotoUserSocial = {
     instagram_username: string;
@@ -133,8 +108,8 @@ export type ApiCoverPhotoUser = {
     portfolio_url: string;
     bio: string;
     location: string;
-    links: ApiCoverPhotoUserLinks;
-    profile_image: ApiCoverPhotoUserProfileImage;
+    links: ApiUserLinks;
+    profile_image: ApiUserProfileImage;
     instagram_username: string;
     total_collections: number;
     total_likes: number;
@@ -156,7 +131,7 @@ export type ApiCoverPhoto = {
     blur_hash: string;
     description?: any;
     alt_description: string;
-    urls: ApiCoverPhotoUrls;
+    urls: ApiPhotoUrls;
     links: ApiPhotoLinks;
     likes: number;
     liked_by_user: boolean;
