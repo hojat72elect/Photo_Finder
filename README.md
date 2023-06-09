@@ -23,6 +23,7 @@ Current technologies used in this project are as follows:
 <li><a href="https://firebase.google.com/docs/firestore">Cloud firestore</a></li>
 <li><a href="https://github.com/csfrequency/react-firebase-hooks">React Firebase hooks</a></li>
 <li>JavaScript</li>
+<li><a href="https://webpack.js.org/">Webpack</a> bundler</li>
 <li>HTML 5</li>
 <li>CSS</li>
 <li>Git</li>
