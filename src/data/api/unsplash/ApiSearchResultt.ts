@@ -1,9 +1,13 @@
-export type RootObject = {
+export type ApiSearchResult = {
     total: number;
     total_pages: number;
-    results: RootObjectResults[];
+    results: ApiPhoto[];
 }
-export type RootObjectResultsUrls = {
+
+/**
+ * The important links of a photo that we will use for showing (or maybe even downloading) that photo.
+ */
+export type ApiPhotoUrls = {
     raw: string;
     full: string;
     regular: string;
@@ -11,13 +15,18 @@ export type RootObjectResultsUrls = {
     thumb: string;
     small_s3: string;
 }
-export type RootObjectResultsLinks = {
+
+export type ApiPhotoLinks = {
     self: string;
     html: string;
     download: string;
     download_location: string;
 }
-export type RootObjectResultsSponsorshipSponsorLinks = {
+
+/**
+ * Links about sponsors of a photographer/user.
+ */
+export type ApiSponsorLinks = {
     self: string;
     html: string;
     photos: string;
@@ -26,18 +35,24 @@ export type RootObjectResultsSponsorshipSponsorLinks = {
     following: string;
     followers: string;
 }
-export type RootObjectResultsSponsorshipSponsorProfile_image = {
+
+export type ApiSponsorProfileImage = {
     small: string;
     medium: string;
     large: string;
 }
-export type RootObjectResultsSponsorshipSponsorSocial = {
+
+export type ApiSponsorSocials = {
     instagram_username: string;
     portfolio_url: string;
     twitter_username: string;
     paypal_email?: any;
 }
-export type RootObjectResultsSponsorshipSponsor = {
+
+/**
+ * the sponsors of a user.
+ */
+export type ApiSponsor = {
     id: string;
     updated_at: string;
     username: string;
@@ -48,24 +63,27 @@ export type RootObjectResultsSponsorshipSponsor = {
     portfolio_url: string;
     bio: string;
     location: string;
-    links: RootObjectResultsSponsorshipSponsorLinks;
-    profile_image: RootObjectResultsSponsorshipSponsorProfile_image;
+    links: ApiSponsorLinks;
+    profile_image: ApiSponsorProfileImage;
     instagram_username: string;
     total_collections: number;
     total_likes: number;
     total_photos: number;
     accepted_tos: boolean;
     for_hire: boolean;
-    social: RootObjectResultsSponsorshipSponsorSocial;
+    social: ApiSponsorSocials;
 }
-export type RootObjectResultsSponsorship = {
+
+export type ApiUserSponsorship = {
     impression_urls: any[];
     tagline: string;
     tagline_url: string;
-    sponsor: RootObjectResultsSponsorshipSponsor;
+    sponsor: ApiSponsor;
 }
-export type RootObjectResultsTopic_submissions = {}
-export type RootObjectResultsUserLinks = {
+
+export type ApiTopicSubmission = {}
+
+export type ApiUserLinks = {
     self: string;
     html: string;
     photos: string;
@@ -74,18 +92,21 @@ export type RootObjectResultsUserLinks = {
     following: string;
     followers: string;
 }
-export type RootObjectResultsUserProfile_image = {
+
+export type ApiUserProfileImage = {
     small: string;
     medium: string;
     large: string;
 }
-export type RootObjectResultsUserSocial = {
+
+export type ApiUserSocial = {
     instagram_username: string;
     portfolio_url: string;
     twitter_username: string;
     paypal_email?: any;
 }
-export type RootObjectResultsUser = {
+
+export type ApiUser = {
     id: string;
     updated_at: string;
     username: string;
@@ -96,33 +117,38 @@ export type RootObjectResultsUser = {
     portfolio_url: string;
     bio: string;
     location: string;
-    links: RootObjectResultsUserLinks;
-    profile_image: RootObjectResultsUserProfile_image;
+    links: ApiUserLinks;
+    profile_image: ApiUserProfileImage;
     instagram_username: string;
     total_collections: number;
     total_likes: number;
     total_photos: number;
     accepted_tos: boolean;
     for_hire: boolean;
-    social: RootObjectResultsUserSocial;
+    social: ApiUserSocial;
 }
+
 export type RootObjectResultsTagsSourceAncestryType = {
     slug: string;
     pretty_slug: string;
 }
+
 export type RootObjectResultsTagsSourceAncestryCategory = {
     slug: string;
     pretty_slug: string;
 }
+
 export type RootObjectResultsTagsSourceAncestrySubcategory = {
     slug: string;
     pretty_slug: string;
 }
-export type RootObjectResultsTagsSourceAncestry = {
+
+export type ApiPhotoTagsAncestry = {
     type: RootObjectResultsTagsSourceAncestryType;
     category: RootObjectResultsTagsSourceAncestryCategory;
     subcategory: RootObjectResultsTagsSourceAncestrySubcategory;
 }
+
 export type RootObjectResultsTagsSourceCover_photoUrls = {
     raw: string;
     full: string;
@@ -131,13 +157,16 @@ export type RootObjectResultsTagsSourceCover_photoUrls = {
     thumb: string;
     small_s3: string;
 }
+
 export type RootObjectResultsTagsSourceCover_photoLinks = {
     self: string;
     html: string;
     download: string;
     download_location: string;
 }
+
 export type RootObjectResultsTagsSourceCover_photoTopic_submissions = {}
+
 export type RootObjectResultsTagsSourceCover_photoUserLinks = {
     self: string;
     html: string;
@@ -147,17 +176,20 @@ export type RootObjectResultsTagsSourceCover_photoUserLinks = {
     following: string;
     followers: string;
 }
+
 export type RootObjectResultsTagsSourceCover_photoUserProfile_image = {
     small: string;
     medium: string;
     large: string;
 }
+
 export type RootObjectResultsTagsSourceCover_photoUserSocial = {
     instagram_username: string;
     portfolio_url: string;
     twitter_username: string;
     paypal_email?: any;
 }
+
 export type RootObjectResultsTagsSourceCover_photoUser = {
     id: string;
     updated_at: string;
@@ -179,7 +211,8 @@ export type RootObjectResultsTagsSourceCover_photoUser = {
     for_hire: boolean;
     social: RootObjectResultsTagsSourceCover_photoUserSocial;
 }
-export type RootObjectResultsTagsSourceCover_photo = {
+
+export type ApiPhotoTagsCover = {
     id: string;
     slug: string;
     created_at: string;
@@ -202,21 +235,24 @@ export type RootObjectResultsTagsSourceCover_photo = {
     plus: boolean;
     user: RootObjectResultsTagsSourceCover_photoUser;
 }
-export type RootObjectResultsTagsSource = {
-    ancestry: RootObjectResultsTagsSourceAncestry;
+
+export type ApiPhotoTagsSource = {
+    ancestry: ApiPhotoTagsAncestry;
     title: string;
     subtitle: string;
     description: string;
     meta_title: string;
     meta_description: string;
-    cover_photo: RootObjectResultsTagsSourceCover_photo;
+    cover_photo: ApiPhotoTagsCover;
 }
-export type RootObjectResultsTags = {
+
+export type ApiPhotoTags = {
     type: string;
     title: string;
-    source: RootObjectResultsTagsSource;
+    source: ApiPhotoTagsSource;
 }
-export type RootObjectResults = {
+
+export type ApiPhoto = {
     id: string;
     slug: string;
     created_at: string;
@@ -228,13 +264,13 @@ export type RootObjectResults = {
     blur_hash: string;
     description?: any;
     alt_description: string;
-    urls: RootObjectResultsUrls;
-    links: RootObjectResultsLinks;
+    urls: ApiPhotoUrls;
+    links: ApiPhotoLinks;
     likes: number;
     liked_by_user: boolean;
     current_user_collections: any[];
-    sponsorship: RootObjectResultsSponsorship;
-    topic_submissions: RootObjectResultsTopic_submissions;
-    user: RootObjectResultsUser;
-    tags: RootObjectResultsTags[];
+    sponsorship: ApiUserSponsorship;
+    topic_submissions: ApiTopicSubmission;
+    user: ApiUser;
+    tags: ApiPhotoTags[];
 }
