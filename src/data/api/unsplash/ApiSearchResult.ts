@@ -88,15 +88,6 @@ export type ApiPhotoTagsAncestry = {
     subcategory: ApiSlug;
 }
 
-export type ApiCoverPhotoTopicSubmissions = {}
-
-export type ApiCoverPhotoUserSocial = {
-    instagram_username: string;
-    portfolio_url: string;
-    twitter_username: string;
-    paypal_email?: any;
-}
-
 export type ApiCoverPhotoUser = {
     id: string;
     updated_at: string;
@@ -116,7 +107,7 @@ export type ApiCoverPhotoUser = {
     total_photos: number;
     accepted_tos: boolean;
     for_hire: boolean;
-    social: ApiCoverPhotoUserSocial;
+    social: ApiUserSocials;
 }
 
 export type ApiCoverPhoto = {
@@ -137,7 +128,7 @@ export type ApiCoverPhoto = {
     liked_by_user: boolean;
     current_user_collections: any[];
     sponsorship?: any;
-    topic_submissions: ApiCoverPhotoTopicSubmissions;
+    topic_submissions: ApiTopicSubmission;
     premium: boolean;
     plus: boolean;
     user: ApiCoverPhotoUser;
