@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {createContext, useState} from 'react';
 import UnsplashService from "./data/UnsplashService";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import ScreenHeader from "./search/ScreenHeader";
+import SearchBar from "./search/SearchBar";
+import ImageScreen from "./images/ImageScreen";
+import ReactPaginate from "react-paginate";
+import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
 
 // Create Context
-export const ImageContext = createContext(null);
-
+export const ImageContext = createContext({});
 
 function App() {
 
@@ -30,22 +34,41 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <BrowserRouter>
+            <ImageContext.Provider value={value}>
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/">
+                            <ScreenHeader>
+                                <SearchBar/>
+                            </ScreenHeader>
+                            <ImageScreen/>
+                            <div className="mb-8">
+                                <ReactPaginate
+                                    containerClassName={'pagination justify-content-center'}
+                                    pageCount={pageCount}
+                                    previousLabel={'previous'}
+                                    nextLabel={'next'}
+                                    breakLabel={'...'}
+                                    marginPagesDisplayed={2}
+                                    pageRangeDisplayed={3}
+                                    pageClassName={'page-item'}
+                                    pageLinkClassName={'page-link'}
+                                    previousClassName={'page-item'}
+                                    previousLinkClassName={'page-link'}
+                                    nextClassName={'page-item'}
+                                    nextLinkClassName={'page-link'}
+                                    breakClassName={'page-item'}
+                                    breakLinkClassName={'page-link'}
+                                    activeClassName={'active'}
+                                />
+                            </div>
+                        </Route>
+                        <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
+                    </Switch>
+                </div>
+            </ImageContext.Provider>
+        </BrowserRouter>
     );
 }
 
