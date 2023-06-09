@@ -97,13 +97,6 @@ export type ApiCoverPhotoUrls = {
     small_s3: string;
 }
 
-export type ApiCoverPhotoLinks = {
-    self: string;
-    html: string;
-    download: string;
-    download_location: string;
-}
-
 export type ApiCoverPhotoTopicSubmissions = {}
 
 export type ApiCoverPhotoUserLinks = {
@@ -164,7 +157,7 @@ export type ApiCoverPhoto = {
     description?: any;
     alt_description: string;
     urls: ApiCoverPhotoUrls;
-    links: ApiCoverPhotoLinks;
+    links: ApiPhotoLinks;
     likes: number;
     liked_by_user: boolean;
     current_user_collections: any[];
