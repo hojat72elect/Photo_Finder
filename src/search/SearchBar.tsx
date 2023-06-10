@@ -9,12 +9,9 @@ import {UNSPLASH_ACCESS_KEY} from "../.secrets/Keys";
  */
 const SearchBar = () => {
 
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState<string>("");
+    // @ts-ignore
     const {fetchData, setSearchImage} = useContext(ImageContext);
-
-    const handleInputChange = (e) => {
-        setSearchValue(e.target.value)
-    }
 
     const handleButtonSearch = () => {
         fetchData(`search/photos?page=1&query=${searchValue}&client_id=${UNSPLASH_ACCESS_KEY}`)
@@ -23,7 +20,7 @@ const SearchBar = () => {
     };
 
 
-    const handleEnterSearch = (e) => {
+    const handleEnterSearch = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
             handleButtonSearch();
         }
@@ -36,7 +33,9 @@ const SearchBar = () => {
                 type="search"
                 placeholder="Search for your favorite photos"
                 value={searchValue}
-                onChange={handleInputChange}
+                onChange={(e) =>
+                    setSearchValue(e.currentTarget.value)
+                }
                 onKeyDown={handleEnterSearch}
             />
             <button
