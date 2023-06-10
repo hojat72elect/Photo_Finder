@@ -14,7 +14,7 @@ export const ImageContext = createContext({});
 
 const App: React.FC = () => {
 
-    const [searchImage, setSearchImage] = useState('');
+    const [searchImage, setSearchImage] = useState("");
     const {
         pageCount,
         response,
