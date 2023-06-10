@@ -12,7 +12,7 @@ import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
 // Create Context
 export const ImageContext = createContext({});
 
-function App() {
+const App: React.FC = () => {
 
     const [searchImage, setSearchImage] = useState('');
     const {
