@@ -2,7 +2,6 @@ import React from 'react';
 import {createContext, useState} from 'react';
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import ReactPaginate from "react-paginate";
 import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
 import {ApiPhoto} from "./data/api/unsplash/ApiSearchResult";
 import {UnsplashService} from "./data/UnsplashService";
@@ -27,7 +26,6 @@ export const App: React.FC = () => {
 
     const [searchImage, setSearchImage] = useState("");
     const {
-        pageCount,
         response,
         isLoading,
         error,
