@@ -22,7 +22,7 @@ export const ImageContext = createContext<GlobalImageContent>({
     searchImage: "",
 });
 
-export const Application: React.FC = () => {
+export const Application: React.FC<{}> = (props) => {
 
     const [searchImage, setSearchImage] = useState("");
     const {
