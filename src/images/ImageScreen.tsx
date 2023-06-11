@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import {ImageContext} from "../App";
 import ImageButton from "./ImageButton";
-import {ApiPhoto} from "../data/api/unsplash/ApiSearchResult";
 
 /**
  * The page for showing requested images.
