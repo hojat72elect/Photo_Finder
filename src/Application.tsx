@@ -5,9 +5,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {PhotoDetailsScreen} from "./photo_details/PhotoDetailsScreen";
 import {ApiPhoto} from "./data/api/unsplash/ApiSearchResult";
 import {UnsplashService} from "./data/UnsplashService";
-import {ImageScreen} from "./images/ImageScreen";
-import {ScreenHeader} from "./search/ScreenHeader";
-import {SearchBar} from "./search/SearchBar";
+import {HomeScreen} from "./home/HomeScreen";
 
 interface GlobalImageContent {
     response: ApiPhoto[],
@@ -47,10 +45,7 @@ export const Application: React.FC<{}> = (props) => {
                 <div className="content">
                     <Switch>
                         <Route exact path="/">
-                            <ScreenHeader>
-                                <SearchBar/>
-                            </ScreenHeader>
-                            <ImageScreen/>
+                            <HomeScreen/>
                         </Route>
                         <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
                     </Switch>
