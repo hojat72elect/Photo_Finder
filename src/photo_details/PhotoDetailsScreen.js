@@ -1,7 +1,3 @@
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
-
-
 export default function PhotoDetailsScreen(props) {
 
     const imageUrl = props.location.state.urls.regular;
