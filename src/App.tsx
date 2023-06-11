@@ -2,7 +2,7 @@ import React from 'react';
 import {createContext, useState} from 'react';
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
+import {PhotoDetailsScreen} from "./photo_details/PhotoDetailsScreen";
 import {ApiPhoto} from "./data/api/unsplash/ApiSearchResult";
 import {UnsplashService} from "./data/UnsplashService";
 import {ImageScreen} from "./images/ImageScreen";

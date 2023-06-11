@@ -1,4 +1,4 @@
-export default function PhotoDetailsScreen(props) {
+export const PhotoDetailsScreen = (props) => {
 
     const imageUrl = props.location.state.urls.regular;
 
