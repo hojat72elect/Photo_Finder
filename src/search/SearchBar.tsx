@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {ImageContext} from "../App";
+import {ImageContext} from "../Application";
 import {UNSPLASH_ACCESS_KEY} from "../.secrets/Keys";
 
 
