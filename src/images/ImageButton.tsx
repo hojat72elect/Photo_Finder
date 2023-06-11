@@ -1,10 +1,15 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import {ApiPhoto} from "../data/api/unsplash/ApiSearchResult";
+
+interface Props {
+    data: ApiPhoto
+}
 
 /**
  * A normal Image viewer which is clickable.
  */
-const ImageButton = ({data}) => {
+const ImageButton: React.FC<Props> = ({data}) => {
     return (
         <Link to={{
             pathname: "/photo_details",
