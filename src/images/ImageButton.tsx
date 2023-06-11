@@ -9,7 +9,7 @@ interface Props {
 /**
  * A normal Image viewer which is clickable.
  */
-const ImageButton: React.FC<Props> = ({data}) => {
+export const ImageButton: React.FC<Props> = ({data}) => {
     return (
         <Link to={{
             pathname: "/photo_details",
@@ -20,4 +20,4 @@ const ImageButton: React.FC<Props> = ({data}) => {
         </Link>
     )
 }
-export default ImageButton
+

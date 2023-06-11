@@ -1,14 +1,14 @@
 import React from 'react';
 import {createContext, useState} from 'react';
-import UnsplashService from "./data/UnsplashService";
 import {UNSPLASH_ACCESS_KEY} from "./.secrets/Keys";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import ScreenHeader from "./search/ScreenHeader";
-import SearchBar from "./search/SearchBar";
-import ImageScreen from "./images/ImageScreen";
 import ReactPaginate from "react-paginate";
 import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
 import {ApiPhoto} from "./data/api/unsplash/ApiSearchResult";
+import {UnsplashService} from "./data/UnsplashService";
+import {ImageScreen} from "./images/ImageScreen";
+import {ScreenHeader} from "./search/ScreenHeader";
+import {SearchBar} from "./search/SearchBar";
 
 interface GlobalImageContent {
     response: ApiPhoto[],
@@ -23,7 +23,7 @@ export const ImageContext = createContext<GlobalImageContent>({
     searchImage: "",
 });
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
 
     const [searchImage, setSearchImage] = useState("");
     const {
@@ -82,4 +82,3 @@ const App: React.FC = () => {
     );
 }
 
-export default App;

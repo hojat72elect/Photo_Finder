@@ -6,7 +6,7 @@ import {ApiPhoto, ApiSearchResult} from "./api/unsplash/ApiSearchResult";
  * Connects to the Unsplash endpoint and retrieves an object containing
  * a page of response from that server.
  */
-const UnsplashService = (param: string) => {
+export const UnsplashService = (param: string) => {
     const [response, setResponse] = useState<ApiPhoto[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [pageCount, setPageCount] = useState(0);
@@ -42,5 +42,3 @@ const UnsplashService = (param: string) => {
         fetchData: (url: string) => fetchData(url)
     }
 }
-
-export default UnsplashService

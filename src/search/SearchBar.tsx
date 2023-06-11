@@ -7,7 +7,7 @@ import {UNSPLASH_ACCESS_KEY} from "../.secrets/Keys";
  * Search bar and the button beside it.
  *
  */
-const SearchBar = () => {
+export const SearchBar = () => {
 
     const [searchValue, setSearchValue] = useState<string>("");
     // @ts-ignore
@@ -47,4 +47,4 @@ const SearchBar = () => {
         </div>
     )
 }
-export default SearchBar
+

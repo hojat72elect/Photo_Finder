@@ -9,7 +9,7 @@ interface Props {
  * It depicts a header title and also shows the [children] below that title.
  *
  */
-const ScreenHeader: React.FC<Props> = ({children,}) => {
+export const ScreenHeader: React.FC<Props> = ({children,}) => {
     return (
         <div className="bg-gray-900 flex items-center py-10">
             <div className="max-w-md mx-auto w-full">
@@ -19,4 +19,4 @@ const ScreenHeader: React.FC<Props> = ({children,}) => {
         </div>
     )
 }
-export default ScreenHeader
+

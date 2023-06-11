@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {ImageContext} from "../App";
-import ImageButton from "./ImageButton";
+import {ImageButton} from "./ImageButton";
+
 
 /**
  * The page for showing requested images.
@@ -8,7 +9,7 @@ import ImageButton from "./ImageButton";
  * there is a gallery of images.
  *
  */
-const ImageScreen = () => {
+export const ImageScreen = () => {
 
 
     const {response, searchImage} = useContext(ImageContext);
@@ -23,4 +24,3 @@ const ImageScreen = () => {
         </>
     )
 }
-export default ImageScreen
