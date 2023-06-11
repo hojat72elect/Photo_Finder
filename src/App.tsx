@@ -8,9 +8,20 @@ import SearchBar from "./search/SearchBar";
 import ImageScreen from "./images/ImageScreen";
 import ReactPaginate from "react-paginate";
 import PhotoDetailsScreen from "./photo_details/PhotoDetailsScreen";
+import {ApiPhoto} from "./data/api/unsplash/ApiSearchResult";
+
+interface GlobalImageContent {
+    response: ApiPhoto[],
+    isLoading: boolean,
+    searchImage: string,
+}
 
 // Create Context
-export const ImageContext = createContext({});
+export const ImageContext = createContext<GlobalImageContent>({
+    response: [],
+    isLoading: true,
+    searchImage: "",
+});
 
 const App: React.FC = () => {
 
