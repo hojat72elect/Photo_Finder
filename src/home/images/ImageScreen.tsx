@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {ImageContext} from "../Application";
+import {ImageContext} from "../../Application";
 import {ImageButton} from "./ImageButton";
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import {ApiPhoto} from "../data/api/unsplash/ApiSearchResult";
+import {ApiPhoto} from "../../data/api/unsplash/ApiSearchResult";
 
 interface Props {
     data: ApiPhoto
