@@ -44,9 +44,7 @@ export const Application: React.FC<{}> = (props) => {
             <ImageContext.Provider value={value}>
                 <div className="content">
                     <Switch>
-                        <Route exact path="/">
-                            <HomeScreen/>
-                        </Route>
+                        <Route exact path="/" component={HomeScreen}/>
                         <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
                     </Switch>
                 </div>
