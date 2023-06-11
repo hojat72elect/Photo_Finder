@@ -53,26 +53,6 @@ export const App: React.FC = () => {
                                 <SearchBar/>
                             </ScreenHeader>
                             <ImageScreen/>
-                            <div className="mb-8">
-                                <ReactPaginate
-                                    containerClassName={'pagination justify-content-center'}
-                                    pageCount={pageCount}
-                                    previousLabel={'previous'}
-                                    nextLabel={'next'}
-                                    breakLabel={'...'}
-                                    marginPagesDisplayed={2}
-                                    pageRangeDisplayed={3}
-                                    pageClassName={'page-item'}
-                                    pageLinkClassName={'page-link'}
-                                    previousClassName={'page-item'}
-                                    previousLinkClassName={'page-link'}
-                                    nextClassName={'page-item'}
-                                    nextLinkClassName={'page-link'}
-                                    breakClassName={'page-item'}
-                                    breakLinkClassName={'page-link'}
-                                    activeClassName={'active'}
-                                />
-                            </div>
                         </Route>
                         <Route exact path="/photo_details" component={PhotoDetailsScreen}/>
                     </Switch>
